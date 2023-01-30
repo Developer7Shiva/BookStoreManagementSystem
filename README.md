@@ -1,1 +1,2 @@
-# Master_Minds_sprint1
+# Book Store Management System
+Sprint 1 Project
