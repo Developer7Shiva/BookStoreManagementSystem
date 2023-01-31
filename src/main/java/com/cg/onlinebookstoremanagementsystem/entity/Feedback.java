@@ -19,38 +19,38 @@ public class Feedback {
 	private Long feedbackId;
 	
 	@Column(name = "feedback_readerid")
-	private String feedbackreaderId;
+	private Long feedbackreaderId;
 	
 	@Column(name = "feedback_orderid")
-	private String feedbackorderId;
+	private Long feedbackorderId;
 	
 	@Column(name = "feedback_ratingdetails")
 	private String feedbackratingDetails;
 	
 	@Column(name = "feedback_bookid")
-	private String feedbackbookId;
+	private Long feedbackbookId;
 	
 	@Column(name = "feedback_description")
 	private String feedbackDescription;
 	
 	/*@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "cat_id")
-	private Category category;
+	@JoinColumn(name = "reader_id")
+	private Reader reader;
 	
-	public Category getCategory() {
-		return category;
+	public Reader getReader() {
+		return reader;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setReader(Reader reader) {
+		this.reader = reader;
 	}*/
 	
 	public Feedback() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Feedback(String feedbackreaderId, String feedbackorderId, String feedbackratingDetails,
-			String feedbackbookId, String feedbackDescription) {
+	public Feedback(Long feedbackreaderId, Long feedbackorderId, String feedbackratingDetails,
+			Long feedbackbookId, String feedbackDescription) {
 		super();
 		this.feedbackreaderId = feedbackreaderId;
 		this.feedbackorderId = feedbackorderId;
@@ -67,19 +67,19 @@ public class Feedback {
 		this.feedbackId = feedbackId;
 	}
 
-	public String getFeedbackreaderId() {
+	public Long getFeedbackreaderId() {
 		return feedbackreaderId;
 	}
 
-	public void setFeedbackreaderId(String feedbackreaderId) {
+	public void setFeedbackreaderId(Long feedbackreaderId) {
 		this.feedbackreaderId = feedbackreaderId;
 	}
 
-	public String getFeedbackorderId() {
+	public Long getFeedbackorderId() {
 		return feedbackorderId;
 	}
 
-	public void setFeedbackorderId(String feedbackorderId) {
+	public void setFeedbackorderId(Long feedbackorderId) {
 		this.feedbackorderId = feedbackorderId;
 	}
 
@@ -91,11 +91,11 @@ public class Feedback {
 		this.feedbackratingDetails = feedbackratingDetails;
 	}
 
-	public String getFeedbackbookId() {
+	public Long getFeedbackbookId() {
 		return feedbackbookId;
 	}
 
-	public void setFeedbackbookId(String feedbackbookId) {
+	public void setFeedbackbookId(Long feedbackbookId) {
 		this.feedbackbookId = feedbackbookId;
 	}
 
@@ -106,11 +106,4 @@ public class Feedback {
 	public void setFeedbackDescription(String feedbackDescription) {
 		this.feedbackDescription = feedbackDescription;
 	}
-	
-	
-	
-	
-	
-	
-
 }
