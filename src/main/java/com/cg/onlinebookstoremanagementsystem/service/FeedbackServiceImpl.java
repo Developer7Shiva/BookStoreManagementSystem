@@ -25,51 +25,51 @@ public class FeedbackServiceImpl implements IFeedbackService{
 	}
 
 	@Override
-	public Feedback getFeedbackById(Long fedId) throws ResourceNotFoundException{
+	public Feedback getFeedBackById(Long fedId) throws ResourceNotFoundException{
 		return feedbackRepo.findById(fedId) 
 				.orElseThrow(() -> new ResourceNotFoundException("feedback Not found"));
 	}
 	
 	@Override
-	public Feedback updateFeedback(Feedback feed, Long fedId) throws ResourceNotFoundException{
+	public Feedback updateFeedBack(Feedback feed, Long fedId) throws ResourceNotFoundException{
 		Feedback existingFeedback = feedbackRepo.findById(fedId)
 		         .orElseThrow(() -> new ResourceNotFoundException("Feedback Not found"));
 	
-		existingFeedback.setFeedbackreaderId(feed.getFeedbackreaderId());
-		existingFeedback.setFeedbackorderId(feed.getFeedbackorderId());
-		existingFeedback.setFeedbackratingDetails(feed.getFeedbackratingDetails());
-		existingFeedback.setFeedbackDescription(feed.getFeedbackDescription());
+		existingFeedback.setFeedBackReaderId(feed.getFeedBackReaderId());
+		existingFeedback.setFeedBackOrderId(feed.getFeedBackOrderId());
+		existingFeedback.setFeedBackRatingDetails(feed.getFeedBackRatingDetails());
+		existingFeedback.setFeedBackDescription(feed.getFeedBackDescription());
 		feedbackRepo.save(existingFeedback);
 		return existingFeedback;
 	}
 	
 	@Override
-	public void deleteFeedback(Long fedId)  {
+	public void deleteFeedBack(Long fedId)  {
 		feedbackRepo.deleteById(fedId);		
 	}
 
 	@Override
-	public List<Feedback> findByFeedbackreaderId(Long fedReaderId) {
-		return feedbackRepo.findByFeedbackreaderId(fedReaderId);
+	public List<Feedback> findByFeedBackReaderId(Long fedReaderId) {
+		return feedbackRepo.findByFeedBackReaderId(fedReaderId);
 	}
 
 	@Override
-	public List<Feedback> findByFeedbackorderId(Long fedOrderId) {
-		return feedbackRepo.findByFeedbackorderId(fedOrderId);
+	public List<Feedback> findByFeedBackOrderId(Long fedOrderId) {
+		return feedbackRepo.findByFeedBackOrderId(fedOrderId);
 	}
 
 	@Override
-	public List<Feedback> findByFeedbackratingDetails(String fedRatingDetails) {
-		return feedbackRepo.findByFeedbackratingDetails(fedRatingDetails);
+	public List<Feedback> findByFeedBackRatingDetails(String fedRatingDetails) {
+		return feedbackRepo.findByFeedBackRatingDetails(fedRatingDetails);
 	}
 
 	@Override
-	public List<Feedback> findByFeedbackDescription(String fedDescription) {
-		return feedbackRepo.findByFeedbackDescription(fedDescription);
+	public List<Feedback> findByFeedBackDescription(String fedDescription) {
+		return feedbackRepo.findByFeedBackDescription(fedDescription);
 	}
 
 	@Override
-	public Feedback getFeedbackbybookId(Long fedBookId) {
+	public Feedback getFeedBackByBookId(Long fedBookId) {
 		// TODO Auto-generated method stub
 		return null;
 	}

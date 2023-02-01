@@ -3,26 +3,27 @@ package com.cg.onlinebookstoremanagementsystem.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 import com.cg.onlinebookstoremanagementsystem.entity.Feedback;
+@Repository
 public interface FeedbackRepository extends JpaRepository<Feedback, Long>{
 	
-	    //select * from feedback where feedbackreader_id = ?
-		public List<Feedback> findByFeedbackId(Long fedId);
-		
+	 
 	
 	    //select * from feedback where feedbackreader_id = ?
-		public List<Feedback> findByFeedbackreaderId(Long fedReaderId);
+		public List<Feedback> findByFeedBackReaderId(Long fedReaderId);
 	
 	    //select * from feedback where feedbackorder_id = ?
-		public List<Feedback> findByFeedbackorderId(Long fedOrderId);
+		public List<Feedback> findByFeedBackOrderId(Long fedOrderId);
 		
 		//select * from feedback where String feedback_description = ?
-		public Feedback FeedbackbybookId(Long fedBookId);
+		public Feedback findByFeedBackBookId(Long fedBookId);
 		
 		//select * from feedback where String feedbackrating_details = ?
-		public List<Feedback> findByFeedbackratingDetails(String fedRatingDetails);
+		public List<Feedback> findByFeedBackRatingDetails(String fedRatingDetails);
 		
 		//select * from feedback where String feedback_description = ?
-		public List<Feedback> findByFeedbackDescription(String fedDescription);
+		public List<Feedback> findByFeedBackDescription(String fedDescription);
 		
 }

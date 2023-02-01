@@ -9,13 +9,13 @@ public interface IFeedbackService {
 	
 	public Feedback addFeedback(Feedback feed);
 	public List<Feedback> listAllFeedbacks();
-	public Feedback getFeedbackById(Long fedId) throws ResourceNotFoundException;
-	public Feedback updateFeedback(Feedback feed,Long fedId) throws ResourceNotFoundException;
-	public void deleteFeedback(Long fedId);
-    public Feedback getFeedbackbybookId(Long fedBookId);  
-	public List<Feedback> findByFeedbackreaderId(Long fedReaderId) ;
-	public List<Feedback> findByFeedbackorderId(Long fedOrderId) ;
-	public List<Feedback> findByFeedbackratingDetails(String fedRatingDetails);
-	public List<Feedback> findByFeedbackDescription(String fedDescription);
+	public Feedback getFeedBackById(Long fedId) throws ResourceNotFoundException;
+	public Feedback updateFeedBack(Feedback feed,Long fedId) throws ResourceNotFoundException;
+	public void deleteFeedBack(Long fedId);
+    public Feedback getFeedBackByBookId(Long fedBookId);  
+	public List<Feedback> findByFeedBackReaderId(Long fedReaderId) ;
+	public List<Feedback> findByFeedBackOrderId(Long fedOrderId) ;
+	public List<Feedback> findByFeedBackRatingDetails(String fedRatingDetails);
+	public List<Feedback> findByFeedBackDescription(String fedDescription);
 
 }

@@ -24,7 +24,7 @@ public class FeedbackController {
 	private IFeedbackService feedbackService;
 	
 	@PostMapping("/addfeedback")
-	public Feedback addFeedback(@RequestBody Feedback feed) {
+	public Feedback addFeedBack(@RequestBody Feedback feed) {
 		return feedbackService.addFeedback(feed);
 	}
 	
@@ -34,49 +34,46 @@ public class FeedbackController {
 	}
 	
 	@GetMapping("/getfeedback/{fedid}")
-	public Feedback getFeedbackById(@PathVariable("fedid") Long fedId) throws ResourceNotFoundException {
-		return feedbackService.getFeedbackById(fedId);
+	public Feedback getFeedBackById(@PathVariable("fedid") Long fedId) throws ResourceNotFoundException {
+		return feedbackService.getFeedBackById(fedId);
 	}
 
-     /* @GetMapping("/getfeedback/{fedbookid}")
-	public Feedback getFeedbackbybookId(@PathVariable("fedbookid") Long fedBookId)  throws ResourceNotFoundException{
-		return feedbackService.getFeedbackbybookId(fedBookId);
-	}*/
+
 	
 	@PutMapping("/update/{fedid}")
-	public Feedback updateFeedback(@RequestBody Feedback feed,@PathVariable("fedid") Long fedId) throws ResourceNotFoundException{
-		return feedbackService.updateFeedback(feed, fedId);
+	public Feedback updateFeedBack(@RequestBody Feedback feed,@PathVariable("fedid") Long fedId) throws ResourceNotFoundException{
+		return feedbackService.updateFeedBack(feed, fedId);
 	}
 	
 	@DeleteMapping("/deletefeedback/{fedid}")
-	public void deleteFeedback(@PathVariable("fedid") Long fedId) {
-		feedbackService.deleteFeedback(fedId);
+	public void deleteFeedBack(@PathVariable("fedid") Long fedId) {
+		feedbackService.deleteFeedBack(fedId);
 	}
 	
 	@GetMapping("/getfeedback/{fedbookid}")
-	public Feedback getFeedbackbybookId(@PathVariable("fedbookid") Long fedBookId) throws ResourceNotFoundException{
-		return feedbackService.getFeedbackbybookId(fedBookId);
+	public Feedback getFeedBackByBookId(@PathVariable("fedbookid") Long fedBookId) throws ResourceNotFoundException{
+		return feedbackService.getFeedBackByBookId(fedBookId);
 	}
 	
 	@GetMapping("/findfeedbackbyreaderid/{fedreadid}")
-	public List<Feedback> findByFeedbackreaderId(@PathVariable("fedreadid") Long fedReaderId) {
-		return feedbackService.findByFeedbackreaderId(fedReaderId);
+	public List<Feedback> findByFeedBackReaderId(@PathVariable("fedreadid") Long fedReaderId) {
+		return feedbackService.findByFeedBackReaderId(fedReaderId);
 	}
 	
 	@GetMapping("/findfeedbackbyorderid/{fedordid}")
-	public List<Feedback> findByFeedbackorderId(@PathVariable("fedordid") Long fedOrderId) {
-		return feedbackService.findByFeedbackorderId(fedOrderId);
+	public List<Feedback> findByFeedBackOrderId(@PathVariable("fedordid") Long fedOrderId) {
+		return feedbackService.findByFeedBackOrderId(fedOrderId);
 	}
        
 	
 	@GetMapping("/findfeedbackbyratdetails/{fedratdet}")
-	public List<Feedback> findByFeedbackratingDetails(@PathVariable("fedratdet") String fedRatingDetails){
-		return feedbackService.findByFeedbackratingDetails(fedRatingDetails);
+	public List<Feedback> findByFeedBackRatingDetails(@PathVariable("fedratdet") String fedRatingDetails){
+		return feedbackService.findByFeedBackRatingDetails(fedRatingDetails);
 	}
 	
 	@GetMapping("/findfeedbackbydesc/{feddesc}")
-	public List<Feedback> findByFeedbackDescription(@PathVariable("feddesc")  String fedDescription){
-		return feedbackService.findByFeedbackDescription(fedDescription);
+	public List<Feedback> findByFeedBackDescription(@PathVariable("feddesc")  String fedDescription){
+		return feedbackService.findByFeedBackDescription(fedDescription);
 	}
 	
 	

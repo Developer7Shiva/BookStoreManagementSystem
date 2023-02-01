@@ -19,24 +19,24 @@ public class Feedback {
 	@Id
 	@Column(name = "feedback_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long feedbackId;
+	private Long feedBackId;
 	
 	@Column(name = "feedback_readerid")
-	private Long feedbackreaderId;
+	private Long feedBackReaderId;
 	
 	@Column(name = "feedback_orderid")
-	private Long feedbackorderId;
+	private Long feedBackOrderId;
 	
 	@Column(name = "feedback_ratingdetails")
-	private String feedbackratingDetails;
+	private String feedBackRatingDetails;
 	
 	@Column(name = "feedback_bookid")
-	private Long feedbackbookId;
+	private Long feedBackBookId;
 	
 	@Column(name = "feedback_description")
-	private String feedbackDescription;
+	private String feedBackDescription;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "reader_id")
 	private Reader reader;
 	
@@ -52,61 +52,63 @@ public class Feedback {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Feedback(Long feedbackreaderId, Long feedbackorderId, String feedbackratingDetails,
-			Long feedbackbookId, String feedbackDescription) {
+	public Feedback(Long feedBackReaderId, Long feedBackOrderId, String feedBackRatingDetails, Long feedBackBookId,
+			String feedBackDescription) {
 		super();
-		this.feedbackreaderId = feedbackreaderId;
-		this.feedbackorderId = feedbackorderId;
-		this.feedbackratingDetails = feedbackratingDetails;
-		this.feedbackbookId = feedbackbookId;
-		this.feedbackDescription = feedbackDescription;
+		this.feedBackReaderId = feedBackReaderId;
+		this.feedBackOrderId = feedBackOrderId;
+		this.feedBackRatingDetails = feedBackRatingDetails;
+		this.feedBackBookId = feedBackBookId;
+		this.feedBackDescription = feedBackDescription;
 	}
 
-	public Long getFeedbackId() {
-		return feedbackId;
+	public Long getFeedBackId() {
+		return feedBackId;
 	}
 
-	public void setFeedbackId(Long feedbackId) {
-		this.feedbackId = feedbackId;
+	public void setFeedBackId(Long feedBackId) {
+		this.feedBackId = feedBackId;
 	}
 
-	public Long getFeedbackreaderId() {
-		return feedbackreaderId;
+	public Long getFeedBackReaderId() {
+		return feedBackReaderId;
 	}
 
-	public void setFeedbackreaderId(Long feedbackreaderId) {
-		this.feedbackreaderId = feedbackreaderId;
+	public void setFeedBackReaderId(Long feedBackReaderId) {
+		this.feedBackReaderId = feedBackReaderId;
 	}
 
-	public Long getFeedbackorderId() {
-		return feedbackorderId;
+	public Long getFeedBackOrderId() {
+		return feedBackOrderId;
 	}
 
-	public void setFeedbackorderId(Long feedbackorderId) {
-		this.feedbackorderId = feedbackorderId;
+	public void setFeedBackOrderId(Long feedBackOrderId) {
+		this.feedBackOrderId = feedBackOrderId;
 	}
 
-	public String getFeedbackratingDetails() {
-		return feedbackratingDetails;
+	public String getFeedBackRatingDetails() {
+		return feedBackRatingDetails;
 	}
 
-	public void setFeedbackratingDetails(String feedbackratingDetails) {
-		this.feedbackratingDetails = feedbackratingDetails;
+	public void setFeedBackRatingDetails(String feedBackRatingDetails) {
+		this.feedBackRatingDetails = feedBackRatingDetails;
 	}
 
-	public Long getFeedbackbookId() {
-		return feedbackbookId;
+	public Long getFeedBackBookId() {
+		return feedBackBookId;
 	}
 
-	public void setFeedbackbookId(Long feedbackbookId) {
-		this.feedbackbookId = feedbackbookId;
+	public void setFeedBackBookId(Long feedBackBookId) {
+		this.feedBackBookId = feedBackBookId;
 	}
 
-	public String getFeedbackDescription() {
-		return feedbackDescription;
+	public String getFeedBackDescription() {
+		return feedBackDescription;
 	}
 
-	public void setFeedbackDescription(String feedbackDescription) {
-		this.feedbackDescription = feedbackDescription;
+	public void setFeedBackDescription(String feedBackDescription) {
+		this.feedBackDescription = feedBackDescription;
 	}
+
+	
 }
