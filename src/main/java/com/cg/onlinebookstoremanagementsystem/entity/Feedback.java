@@ -1,11 +1,14 @@
 package com.cg.onlinebookstoremanagementsystem.entity;
 
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 
@@ -33,7 +36,7 @@ public class Feedback {
 	@Column(name = "feedback_description")
 	private String feedbackDescription;
 	
-	/*@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "reader_id")
 	private Reader reader;
 	
@@ -43,7 +46,7 @@ public class Feedback {
 
 	public void setReader(Reader reader) {
 		this.reader = reader;
-	}*/
+	}
 	
 	public Feedback() {
 		// TODO Auto-generated constructor stub
